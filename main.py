@@ -1,15 +1,15 @@
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 
-from routers.student_routers import router as student_router
+from routers.patient_routers import router as patient_router
 
 app = FastAPI(
-    title="University Student Management API",
-    description="FastAPI In-Memory CRUD assignment for managing university student records.",
+    title="University Patient Management API",
+    description="FastAPI In-Memory CRUD assignment for managing university patient records.",
     version="1.0.0"
 )
 
-app.include_router(student_router)
+app.include_router(patient_router)
 
 
 @app.get("/", tags=["Root"])
