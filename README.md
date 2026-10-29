@@ -1,15 +1,15 @@
-# Student CRUD API
+# Patient CRUD API
 
-A simple **Student CRUD API** built with **Python and FastAPI**.
-This project demonstrates how to create, read, update, and delete student records through REST API endpoints.
+A simple **Patient CRUD API** built with **Python and FastAPI**.
+This project demonstrates how to create, read, update, and delete patient records through REST API endpoints.
 
 ## 🚀 Features
 
-* Create a new student
-* Get all students
-* Get a student by ID
-* Update student information
-* Delete a student
+* Create a new patient
+* Get all patients
+* Get a patient by ID
+* Update patient information
+* Delete a patient
 * FastAPI REST API
 * Automatic API documentation with Swagger UI
 * Python virtual environment support
@@ -26,17 +26,17 @@ This project demonstrates how to create, read, update, and delete student record
 ## 📁 Project Structure
 
 ```text
-student_curd/
+patient_curd/
 │
 ├── main.py
 ├── routes/
-│   └── student_routes.py
+│   └── patient_routes.py
 │
 ├── models/
-│   └── student.py
+│   └── patient.py
 │
 ├── schemas/
-│   └── student_schema.py
+│   └── patient_schema.py
 │
 ├── requirements.txt
 ├── README.md
@@ -50,8 +50,8 @@ student_curd/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Dhrumil00007/student_curd.git
-cd student_curd
+git clone https://github.com/Dhrumil00007/patient_curd.git
+cd patient_curd
 ```
 
 ### 2. Create a virtual environment
@@ -116,13 +116,13 @@ Swagger UI allows you to test the CRUD operations directly from your browser.
 
 | Method | Endpoint         | Description          |
 | ------ | ---------------- | -------------------- |
-| GET    | `/students`      | Get all students     |
-| GET    | `/students/{id}` | Get a student by ID  |
-| POST   | `/students`      | Create a new student |
-| PUT    | `/students/{id}` | Update a student     |
-| DELETE | `/students/{id}` | Delete a student     |
+| GET    | `/patients`      | Get all patients     |
+| GET    | `/patients/{id}` | Get a patient by ID  |
+| POST   | `/patients`      | Create a new patient |
+| PUT    | `/patients/{id}` | Update a patient     |
+| DELETE | `/patients/{id}` | Delete a patient     |
 
-## 📝 Example Student
+## 📝 Example Patient
 
 Example request:
 
@@ -147,7 +147,7 @@ You can test the API using:
 For example:
 
 ```text
-GET http://127.0.0.1:8000/students
+GET http://127.0.0.1:8000/patients
 ```
 
 ## 📦 Requirements
@@ -182,7 +182,7 @@ __pycache__/
 
 ## 📌 Project Purpose
 
-This project was created as a **Student CRUD assignment** to demonstrate:
+This project was created as a **Patient CRUD assignment** to demonstrate:
 
 1. FastAPI application setup
 2. REST API development
