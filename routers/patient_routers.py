@@ -5,7 +5,6 @@ from controllers import patient_controller
 
 router = APIRouter(prefix="/patients", tags=["Patients"])
 
-
 @router.post(
     "/postpatients",
     response_model=PatientResponse,

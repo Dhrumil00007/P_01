@@ -9,7 +9,6 @@ class PatientBase(BaseModel):
 class PatientCreate(PatientBase):
     pass
 
-
 class PatientUpdate(PatientBase):
     pass
 class PatientResponse(PatientBase):

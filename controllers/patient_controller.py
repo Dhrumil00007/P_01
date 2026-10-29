@@ -8,7 +8,6 @@ current_id: int = 1
 def get_all_patients() -> List[dict]:
     return patients_db
 
-
 def get_patient_by_id(patient_id: int) -> Optional[dict]:
     for patient in patients_db:
         if patient["id"] == patient_id:

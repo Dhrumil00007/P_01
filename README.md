@@ -4,7 +4,6 @@ A simple **Patient CRUD API** built with **Python and FastAPI**.
 This project demonstrates how to create, read, update, and delete patient records through REST API endpoints.
 
 ## 🚀 Features
-
 * Create a new patient
 * Get all patients
 * Get a patient by ID

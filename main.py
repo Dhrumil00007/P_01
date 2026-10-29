@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 
 from routers.patient_routers import router as patient_router
-
 app = FastAPI(
     title="University Patient Management API",
     description="FastAPI In-Memory CRUD assignment for managing university patient records.",
