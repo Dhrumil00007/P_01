@@ -1,50 +1,80 @@
 # Patient CRUD API
 
-A simple **Patient CRUD API** built with **Python and FastAPI**.
-This project demonstrates how to create, read, update, and delete patient records through REST API endpoints.
+### 🌐 Live Application — Render
 
-## 🚀 Features
-* Create a new patient
-* Get all patients
-* Get a patient by ID
-* Update patient information
-* Delete a patient
-* FastAPI REST API
-* Automatic API documentation with Swagger UI
-* Python virtual environment support
+**[View ReDoc](https://YOUR-PATIENT-SERVICE.onrender.com/redoc)**
 
-## 🛠️ Technologies Used
+---
 
-* **Python 3**
-* **FastAPI**
-* **Uvicorn**
-* **Pydantic**
-* REST API
-* Git & GitHub
+<div align="center">
 
-## 📁 Project Structure
+## Patient Records. Clear Endpoints. Simple Operations.
+
+A Python and FastAPI project for creating, viewing, updating, and deleting patient records through a documented REST API.
+
+**Python · FastAPI · Pydantic · Uvicorn · Render**
+
+[Source Code](https://github.com/Dhrumil00007/patient_curd) ·
+[Local API Documentation](http://127.0.0.1:8000/docs)
+
+</div>
+
+---
+
+## Overview
+
+Patient CRUD API demonstrates the complete lifecycle of a patient record using REST endpoints. It includes request validation with Pydantic and interactive API documentation through FastAPI.
+
+The project was developed for **Principles of DevOps and Web API Development**.
+
+## Features
+
+- **Create:** Add a patient record.
+- **Read:** Retrieve all patients or find one by ID.
+- **Update:** Modify an existing patient.
+- **Delete:** Remove a patient record.
+- **Validate:** Check request data against defined schemas.
+- **Explore:** Test API operations directly through Swagger UI.
+
+## Technology Stack
+
+| Technology | Purpose |
+| --- | --- |
+| Python | Application programming language |
+| FastAPI | API framework and routing |
+| Pydantic | Data models and request validation |
+| Uvicorn | ASGI application server |
+| Swagger UI / ReDoc | API documentation |
+| Git and GitHub | Version control and source hosting |
+| Render | Application hosting |
+
+## Project Layout
+
+The following layout describes the structure used in this guide:
 
 ```text
 patient_curd/
-│
 ├── main.py
 ├── routes/
 │   └── patient_routes.py
-│
 ├── models/
 │   └── patient.py
-│
 ├── schemas/
 │   └── patient_schema.py
-│
 ├── requirements.txt
 ├── README.md
 └── .gitignore
 ```
 
-> The exact folder structure may vary depending on the final version of the project.
+| Path | Responsibility |
+| --- | --- |
+| `main.py` | Creates the application and registers routes |
+| `routes/patient_routes.py` | Defines patient API endpoints |
+| `models/patient.py` | Contains the patient model |
+| `schemas/patient_schema.py` | Defines request and response schemas |
+| `requirements.txt` | Lists application dependencies |
 
-## ⚙️ Installation
+## Run Locally
 
 ### 1. Clone the repository
 
@@ -55,75 +85,65 @@ cd patient_curd
 
 ### 2. Create a virtual environment
 
-Windows:
-
-```powershell
+```bash
 python -m venv .venv
 ```
 
-### 3. Activate the virtual environment
+### 3. Activate the environment
+
+**Windows PowerShell**
 
 ```powershell
-.venv\Scripts\activate
+.\.venv\Scripts\Activate.ps1
+```
+
+**Windows Command Prompt**
+
+```bat
+.venv\Scripts\activate.bat
+```
+
+**macOS / Linux**
+
+```bash
+source .venv/bin/activate
 ```
 
 ### 4. Install dependencies
 
-```powershell
-pip install -r requirements.txt
+```bash
+python -m pip install -r requirements.txt
 ```
 
-If `requirements.txt` is not available, install FastAPI and Uvicorn manually:
+### 5. Start the application
 
-```powershell
-pip install fastapi uvicorn
+```bash
+python -m uvicorn main:app --reload
 ```
 
-## ▶️ Run the Project
+Open **http://127.0.0.1:8000/docs** to test the API.
 
-Start the FastAPI server using:
+## API Reference
 
-```powershell
-uvicorn main:app --reload
-```
-
-The API will normally run at:
+Base URL for local development:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-## 📚 API Documentation
+| Method | Endpoint | Operation |
+| --- | --- | --- |
+| `POST` | `/patients` | Create a patient |
+| `GET` | `/patients` | Retrieve all patients |
+| `GET` | `/patients/{id}` | Retrieve a patient by ID |
+| `PUT` | `/patients/{id}` | Update a patient |
+| `DELETE` | `/patients/{id}` | Delete a patient |
 
-After starting the server, open:
+Replace `{id}` with an existing patient's ID. The running application's `/docs` page provides the authoritative endpoint paths and request schemas.
 
-**Swagger UI**
+## Example Request
 
-```text
-http://127.0.0.1:8000/docs
-```
-
-**ReDoc**
-
-```text
-http://127.0.0.1:8000/redoc
-```
-
-Swagger UI allows you to test the CRUD operations directly from your browser.
-
-## 🔗 API Endpoints
-
-| Method | Endpoint         | Description          |
-| ------ | ---------------- | -------------------- |
-| GET    | `/patients`      | Get all patients     |
-| GET    | `/patients/{id}` | Get a patient by ID  |
-| POST   | `/patients`      | Create a new patient |
-| PUT    | `/patients/{id}` | Update a patient     |
-| DELETE | `/patients/{id}` | Delete a patient     |
-
-## 📝 Example Patient
-
-Example request:
+Example patient body for a schema containing `name`, `email`, and `age`:
 
 ```json
 {
@@ -133,68 +153,64 @@ Example request:
 }
 ```
 
-## 🧪 Testing
+Use the fields shown in Swagger UI if your patient schema differs.
 
-You can test the API using:
+## Test the API
 
-* FastAPI Swagger UI
-* Browser for GET requests
-* Postman
-* Thunder Client
-* curl
+1. Start the server.
+2. Open `/docs`.
+3. Expand the create-patient operation.
+4. Select **Try it out**, enter the required fields, and select **Execute**.
+5. Retrieve the created patient.
+6. Update the record and retrieve it again.
+7. Delete the record and check the response when retrieving it afterward.
 
-For example:
+You can also test requests using Postman, Thunder Client, or curl.
 
-```text
-GET http://127.0.0.1:8000/patients
-```
+## Render Configuration
 
-## 📦 Requirements
+For an application whose entry point is `main.py` and FastAPI instance is `app`:
 
-Example `requirements.txt`:
+| Setting | Value |
+| --- | --- |
+| Build command | `pip install -r requirements.txt` |
+| Start command | `uvicorn main:app --host 0.0.0.0 --port $PORT` |
+| Documentation path | `/docs` |
 
-```text
-fastapi
-uvicorn
-```
+Configure any environment variables required by your application in the Render dashboard.
 
-Install them with:
+## Repository Hygiene
 
-```powershell
-pip install -r requirements.txt
-```
+Recommended `.gitignore` entries:
 
-## 🔐 Environment
-
-The project uses a Python virtual environment.
-
-The `.venv` folder should **not** be uploaded to GitHub.
-
-Make sure `.gitignore` contains:
-
-```text
+```gitignore
 .venv/
+venv/
 __pycache__/
-*.pyc
+*.py[cod]
 .env
+.env.*
+!.env.example
+.pytest_cache/
+.vscode/
+.idea/
 ```
 
-## 📌 Project Purpose
+Keep credentials and database connection secrets in environment variables.
 
-This project was created as a **Patient CRUD assignment** to demonstrate:
+## Learning Outcomes
 
-1. FastAPI application setup
-2. REST API development
-3. CRUD operations
-4. API routing
-5. Request and response handling
-6. Running an application with Uvicorn
-7. Publishing a Python project to GitHub
+This project demonstrates:
 
-## 👨‍💻 Author
+- FastAPI application setup and routing
+- REST API design and CRUD operations
+- Request validation with Pydantic
+- Interactive API testing
+- Python dependency management
+- GitHub source hosting and Render deployment
+
+## Author
 
 **Dhrumil Patel**
 
----
-
-⭐ If you find this project useful, feel free to star the repository.
+[GitHub Profile](https://github.com/Dhrumil00007)
